@@ -58,7 +58,6 @@ Gblocks tpo_seq_alignment_clean.fas -t=d -b5=h
 python extract_conserved.py tpo_seq_alignment_clean.fas-gb 1.0
 
 
-
-
+![Comand Line](https://github.com/abdulaziz-khaled/Multiple-Sequence-Alignment-with-Trimming-and-Conserved-Region-Discovery/blob/main/photo_2025-11-20_17-36-21.jpg)
 
 
