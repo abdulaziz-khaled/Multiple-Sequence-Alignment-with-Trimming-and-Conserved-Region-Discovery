@@ -62,17 +62,23 @@ python extract_conserved.py tpo_seq_alignment_clean.fas-gb 1.0
 
 ## Downstream Applications
 The processed and trimmed TPO datasets generated in this workflow—along with the extracted conserved regions—are fully suitable for a broad range of downstream bioinformatics and molecular biology applications. These include:
-	•	**Primer Design**
+
+•	**Primer Design**
 Conserved blocks can serve as reliable templates for designing robust and specific PCR primers for amplification across multiple species or within targeted clades.
-	•	Phylogenetic Tree Construction
+
+•	**Phylogenetic Tree Construction**
 High-quality, trimmed, and gap-reduced alignments produced by MUSCLE and Gblocks are ideal for constructing phylogenetic trees in MEGA or other phylogenetic software, enabling evolutionary and comparative genomic analyses.
-	•	Variant and SNP Analysis
+
+•	**Variant and SNP Analysis**
 Conserved-region mapping facilitates the identification of variable positions, lineage-specific mutations, and potential functional variations.
-	•	Molecular Marker Development
+	
+•	**Molecular Marker Development**
 Conserved regions are valuable for designing molecular markers such as barcoding sequences or probes.
-	•	Functional and Structural Bioinformatics
+
+•	**Functional and Structural Bioinformatics**
 The curated TPO datasets can be integrated with protein modeling pipelines, motif discovery tools, or regulatory region prediction algorithms.
-	•	Comparative Genomics and Evolutionary Studies
+	
+•	**Comparative Genomics and Evolutionary Studies**
 The dataset supports comparative analyses between species to infer evolutionary constraints, conservation patterns, and functional divergence.
 
 Overall, the pipeline provides a clean, reproducible dataset that can be directly used for any downstream study requiring accurate alignments, conserved motifs, or trimmed coding sequences.
