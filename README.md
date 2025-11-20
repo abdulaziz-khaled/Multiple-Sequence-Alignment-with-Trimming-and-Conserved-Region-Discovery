@@ -55,7 +55,9 @@ awk '/^>/ {print ">"$1; next} {print}' tpo_seq_alignment.fas > tpo_seq_alignment
 Gblocks tpo_seq_alignment_clean.fas -t=d -b5=h
 
 # Extract conserved regions using custom Python script
-python extract_conserved.py tpo_seq_alignment_clean.fas-gb 1.0```
+python extract_conserved.py tpo_seq_alignment_clean.fas-gb 1.0
+
+
 
 
 
