@@ -82,3 +82,16 @@ The curated TPO datasets can be integrated with protein modeling pipelines, moti
 The dataset supports comparative analyses between species to infer evolutionary constraints, conservation patterns, and functional divergence.
 
 Overall, the pipeline provides a clean, reproducible dataset that can be directly used for any downstream study requiring accurate alignments, conserved motifs, or trimmed coding sequences.
+
+## Contact & Discussion
+If you have questions, suggestions, or would like to discuss improvements to this workflow, feel free to reach out.
+I am always open to collaboration, feedback, and contributions to enhance this pipeline.
+•	**Project Author**: Abdulaziz Khaled
+
+•	**GitHub**: https://github.com/abdulaziz-khaled￼
+
+•	**Email**: abdelaziz.khaled.eg@gmail.com
+	
+•	**LinkedIn**: https://www.linkedin.com/in/abdul-aziz-khaled
+
+• **Telegram**: https://t.me/zizo_elamir
