@@ -24,4 +24,39 @@ In the second approach, a more focused dataset was collected by retrieving seque
 These sequences were also downloaded in `FASTA format` and treated as an independent dataset. A separate pipeline of MSA, trimming, and conserved region identification was performed on this dataset to provide high-resolution insights specific to the human TPO gene.
 All downloaded FASTA sequences were organized using simple text editors such as `Notepad++`, with each sequence treated as an individual operational taxonomic unit (OTU) before being processed in the subsequent analytical steps.
 
+# Multiple Sequence Alignment (MSA)
+All collected `TPO gene` sequences from both datasets were subjected to multiple sequence alignment (MSA) using the `MUSCLE algorithm` implemented in the `MEGA software` package. The `BLAST-derived dataset` (101 sequences) and the `Gene ID: 7173 dataset` were aligned independently to ensure accurate comparison within each group. Default MUSCLE parameters were applied, and the resulting alignments were inspected for overall quality and consistency before proceeding to trimming and downstream analyses.
+
+# Sequence Trimming and Conserved Regions
+After generating the multiple sequence alignment (MSA) using `MUSCLE` implemented in the `MEGA` application, the aligned sequences were subjected to a trimming process to remove low-quality regions and segments containing long or inconsistent gaps. Trimming is a critical step in preparing the alignment for downstream analyses such as primer design, as it ensures that only reliable and well-aligned regions are retained.
+The trimming step was conducted in a `Linux` environment using `Gblocks`, a widely used tool for identifying conserved, gap-free, and high-confidence alignment blocks. Gblocks evaluates each column in the alignment and removes segments that fail to meet conservation thresholds. Only regions with minimal variability and high positional agreement among sequences were preserved.
+
+# Conserved Regions Identification
+Conserved regions represent nucleotide stretches that exhibit very low variability across the aligned sequences. These regions are essential for designing robust primer pairs because they:
+	•	Provide stable binding sites with minimal risk of mismatches
+	•	Improve the specificity and accuracy of PCR amplification
+	•	Ensure consistent amplification across different isolates or variants
+	•	Avoid areas affected by insertion–deletion events or high mutation rates
+Following the trimming step performed by Gblocks, conserved regions were extracted using a custom `Python script` developed with `Biopython`. The script scans the Gblocks-processed alignment and identifies continuous high-identity nucleotide windows suitable for downstream primer design.
+
+```bash
+#!/bin/bash
+
+# Activate conda environment
+conda activate gblock
+
+# Navigate to Gblocks working directory
+cd ~/gblock
+
+# Clean FASTA headers for Gblocks
+awk '/^>/ {print ">"$1; next} {print}' tpo_seq_alignment.fas > tpo_seq_alignment_clean.fas
+
+# Run Gblocks for trimming alignment
+Gblocks tpo_seq_alignment_clean.fas -t=d -b5=h
+
+# Extract conserved regions using custom Python script
+python extract_conserved.py tpo_seq_alignment_clean.fas-gb 1.0```
+
+
+
 
