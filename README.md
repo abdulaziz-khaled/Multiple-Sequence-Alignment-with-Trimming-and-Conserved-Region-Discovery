@@ -27,7 +27,14 @@ All downloaded FASTA sequences were organized using simple text editors such as 
 # Multiple Sequence Alignment (MSA)
 All collected `TPO gene` sequences from both datasets were subjected to multiple sequence alignment (MSA) using the `MUSCLE algorithm` implemented in the `MEGA software` package. The `BLAST-derived dataset` (101 sequences) and the `Gene ID: 7173 dataset` were aligned independently to ensure accurate comparison within each group. Default MUSCLE parameters were applied, and the resulting alignments were inspected for overall quality and consistency before proceeding to trimming and downstream analyses.
 
-# Sequence Trimming and Conserved Regions
+# FASTA Header Cleaning (Pre-Trimming Step)
+Before running Gblocks, the aligned `FASTA file` required preprocessing to fix header formatting issues.
+During the first attempt, Gblocks terminated with the error:
+`“Sequence name too long — Execution terminated.”`
+This occurs because Gblocks does not accept FASTA headers containing spaces, special characters, or long descriptions.
+To fix this, an awk command was used to clean all headers and keep only the first word after the “>” symbol. This ensures compatibility with Gblocks and prevents pipeline failure.
+
+# Sequence Trimming 
 After generating the multiple sequence alignment (MSA) using `MUSCLE` implemented in the `MEGA` application, the aligned sequences were subjected to a trimming process to remove low-quality regions and segments containing long or inconsistent gaps. Trimming is a critical step in preparing the alignment for downstream analyses such as primer design, as it ensures that only reliable and well-aligned regions are retained.
 The trimming step was conducted in a `Linux` environment using `Gblocks`, a widely used tool for identifying conserved, gap-free, and high-confidence alignment blocks. Gblocks evaluates each column in the alignment and removes segments that fail to meet conservation thresholds. Only regions with minimal variability and high positional agreement among sequences were preserved.
 
