@@ -13,3 +13,15 @@ Sequence trimming and removal of low-quality alignment `blocks` were carried out
 Command-line processing and dataset manipulation were supported by `awk tool`, and conserved region extraction and parsing tasks were performed using a custom `Python script` built with the `Biopython` library. 
 Data organization and text handling were completed using `Microsoft Excel`, `Notepad++`, and a `laptop computer`.
 The material used in this study consisted of Thyroperoxidase (TPO) gene sequences obtained from the `NCBI database`. A total of 101 TPO gene sequences were retrieved through `BLAST` searches to capture sequence diversity across species. Additionally, datasets associated with `Gene ID: 7173` (human TPO) were downloaded in `FASTA format` for subsequent alignment, trimming, and conserved region analysis.
+
+# DNA Sequence Data Mining
+DNA sequence data collection in this study was conducted using two complementary approaches to ensure broad evolutionary coverage as well as high-quality reference alignment. 
+The first dataset was obtained by mining TPO (Thyroperoxidase) gene sequences through `NCBI BLAST`, where the `Nucleotide` option was selected and keywords such as `“thyroperoxidase (TPO)”, "Human", “CDS”`, and related terms were used to retrieve sequences from multiple species. 
+This search produced a diverse dataset of `101 TPO gene` sequences, which were downloaded in `FASTA format` and compiled into a single file for downstream processing. 
+This dataset was subsequently analyzed through multiple sequence alignment (MSA), trimming, and conserved region detection.
+
+In the second approach, a more focused dataset was collected by retrieving sequence entries associated with `Gene ID: 7173` (human TPO) directly from the `NCBI Gene` database. 
+These sequences were also downloaded in `FASTA format` and treated as an independent dataset. A separate pipeline of MSA, trimming, and conserved region identification was performed on this dataset to provide high-resolution insights specific to the human TPO gene.
+All downloaded FASTA sequences were organized using simple text editors such as `Notepad++`, with each sequence treated as an individual operational taxonomic unit (OTU) before being processed in the subsequent analytical steps.
+
+
